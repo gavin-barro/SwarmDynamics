@@ -8,10 +8,10 @@ class Ecosystem:
     """
     
     
-    def __init__(self, initial_resources: int, resource_regeneration_rate: float = 0.1):
+    def __init__(self, initial_resources: int, resource_regeneration_rate: float = 0.1, species_list: list[Species] = []):
         self.initial_resources = initial_resources
         self.resource_regeneration_rate = resource_regeneration_rate
-        self.species_list = []
+        self.species_list = species_list
         
     
     def add_species(self, species: Species) -> None:
