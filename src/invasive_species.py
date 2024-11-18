@@ -3,9 +3,9 @@ from local_species import LocalSpecies
 
 class InvasiveSpecies(Species):
     
-    def __init__(self, name: str, population_size: int, consumption_rate: int, growth_rate: float, spread_rate: float):
+    def __init__(self, name: str, population_size: int, consumption_rate: int, growth_rate: float, breeding_co: float):
         super().__init__(name, population_size, consumption_rate, growth_rate)
-        self.spread_rate = spread_rate  # Rate at which the invasive species spreads, potentially affecting other species
+        self.breeding_co = breeding_co  # Rate at which the invasive species spreads, potentially affecting other species
         
 
     def impact_on_local_species(self, local_species: LocalSpecies):

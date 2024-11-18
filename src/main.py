@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from ecosystem import Ecosystem
 import numpy as np 
 import math
 
@@ -18,6 +19,10 @@ import math
 def main() -> None:
     pass
 
+
+# sets up base components to our environment
+def setup() -> Ecosystem:
+    pass
 
 if __name__ == "__main__":
     main()
