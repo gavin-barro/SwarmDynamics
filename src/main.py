@@ -1,12 +1,17 @@
-
+import matplotlib.pyplot as plt
+import numpy as np 
+import math
 
 """
     Driver module to be used to run our program.
-    TODO: Yap about what the program does
+    TODO: This python module runs the simulation and collections information on it.
+    It will run the simulation for a select amount of ticks and every tick the 
+    information on the program will outputed. The idea of this simulation is 
+    to simulate the introduction of an invasive species and its impact on an exsisting
+    ecosystem. 
 
     Author: Gavin Barro and Austin Earl
     Version: 10/15/2024
-
 """
 
 
