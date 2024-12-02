@@ -117,7 +117,7 @@ class Flower:
             new_seed = Seed(age=0, species=self.species, lifespan=10, 
                             start_of_bloom=self._start_of_bloom, occupied=False, 
                             nectar_regeneration=self._nectar_regeneration, active=True)
-            self.blocked_seeds(new_seed)
+            self._blocked_seeds.append(new_seed)
             self.occupied = False  # Reset after seed production
             return True
         return False
