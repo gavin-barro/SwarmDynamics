@@ -97,18 +97,6 @@ class Flower:
     def blocked_seeds(self, value: list[Seed]) -> None:
         self._blocked_seeds = value
     
-    def produce_seeds(self):
-        """Flower produces seeds if pollinated."""
-        if self.occupied:
-            # Seed production logic here, for simplicity assume 1 seed per tick
-            self.flower_seeds += 1
-            self.occupied = False  # Reset after seed production
-            return True
-        return False
-
-    def age_flower(self):
-        """Aging the flower over time."""
-        self.age += 1
-        if self.age > self.lifespan:
-            return False  # Flower dies after reaching lifespan
-        return True
+    def update_flower(self, value: int) -> None:
+        self._flower_nectar = self._flower_nectar - value + self._nectar_regeneration
+        self._age = self._age + 1
