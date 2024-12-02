@@ -112,6 +112,10 @@ class Flower:
         if self.occupied:
             # Seed production logic here, for simplicity assume 1 seed per tick
             self.flower_seeds += 1
+            new_seed = Seed(age=0, species=self.species, lifespan=10, 
+                            start_of_bloom=self._start_of_bloom, occupied=False, 
+                            nectar_regeneration=self._nectar_regeneration, active=True)
+            self.blocked_seeds.append(new_seed)
             self.occupied = False  # Reset after seed production
             return True
         return False
