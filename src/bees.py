@@ -1,5 +1,6 @@
 from flowers import Flower
 from hives import Hive
+import random
 
 class Bee:
     MAX_NECTAR = 19
@@ -109,3 +110,11 @@ class Bee:
         self._current_flower.occupied(False)
         self._previous_flower = self._current_flower
         self._current_flower = self._destination
+        
+    def increment_remove_age(self) -> bool:
+        self.age += 1
+        rand = random.randint(0, 100)
+        if self.age > 15 and rand > 70:
+            return True
+        return False
+            
