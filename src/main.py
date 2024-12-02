@@ -28,7 +28,7 @@ def main() -> None:
     # simulation3 = setup_simulation3()
     
     # Baseline simulation where invasive flowers don't dominate
-    # ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"], 1)
+    ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"], 1)
     
     # # Invasive flowers dominate because their nectar rewards are higher
     # ecosystem2 = Ecosystem(simulation2["Bees"], simulation2["Flowers"], simulation2["Hives"], simulation2["Seeds"])

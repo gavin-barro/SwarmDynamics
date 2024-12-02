@@ -28,8 +28,7 @@ class Ecosystem:
     def tick(self, iteration: int, simulation_num: int) -> None:
         """Update the states of bees, flowers, hives, and seeds."""
         if simulation_num == 1:
-            self.update_bees_1(iteration)
-            self.update_flowers_1()
+            self.update_bees_flowers_1(iteration)
             self.update_hives_1()
             self.update_seeds_1()
         #  TODO
@@ -39,7 +38,7 @@ class Ecosystem:
             self.update_hives_2()
             self.update_seeds_2()
         
-    def update_bees_1(self, iteration: int) -> None:
+    def update_bees_flowers_1(self, iteration: int) -> None:
         if iteration == 0:
             for bee in self.bees:
                 flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
@@ -59,9 +58,6 @@ class Ecosystem:
                         bee.visit_flower(iteration)
                 if bee.increment_remove_age(): self.bees.remove(bee)
 
-    
-    def update_flowers_1(self) -> None:
-        pass
     
     def update_hives_1(self) -> None:
         pass
