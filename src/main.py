@@ -23,20 +23,14 @@ def main() -> None:
     defaults: dict = setup()
     
     # Baseline simulation where invasive flowers don't dominate
-    simulation1 = Ecosystem()
-    run_simulation(simulation1)
+    simulation1 = Ecosystem(defaults)
     
     # # Invasive flowers dominate because their nectar rewards are higher
     # simulation2 = Ecosystem()
-    # run_simulation(simulation2)
     
     # # Bees prefer invasive flowers, causing the second bee species to take over
     # simulation3 = Ecosystem()
-    # run_simulation(simulation3)
 
-
-def run_simulation(simulation: Ecosystem) -> None:
-    pass
 
 
 def setup() -> dict:
