@@ -26,7 +26,6 @@ def main() -> None:
     simulation1 = setup_simulation1()
     # simulation2 = setup_simulation2()
     # simulation3 = setup_simulation3()
-    print(simulation1["Bees"])
     
     # Baseline simulation where invasive flowers don't dominate
     # ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"])
@@ -112,7 +111,8 @@ def setup_simulation1() -> dict[str, list]:
             season_start = 0
             season_end = 1000
             storage_nectar = 0
-            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
+            has_seed = False
+            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar, has_seed)
             hives_list.append(curr_hive)
     
     flowers_list: list[Flower] = []
@@ -176,13 +176,13 @@ def setup_simulation1() -> dict[str, list]:
     for _ in range(60):
         age = 0
         cur_flower = flowers_list[random.randint(0, len(flowers_list) - 1)]
-        species = cur_flower.species()
-        life_span = cur_flower.lifespan()
-        start_of_bloom = cur_flower.start_of_bloom()
-        occupied = cur_flower.occupied()
-        nectar_regn = cur_flower.nectar_regeneration()
+        species = cur_flower.species
+        life_span = cur_flower.lifespan
+        start_of_bloom = cur_flower.start_of_bloom
+        occupied = cur_flower.occupied
+        nectar_regn = cur_flower.nectar_regeneration
         active = False
-        cur_seed = Seed(age, species, life_span, start_of_bloom, occupied, nectar_regn, active, cur_flower)
+        cur_seed = Seed(age, species, life_span, start_of_bloom, occupied, nectar_regn, active)
         seed_list.append(cur_seed)
     
     bees_list: list[Bee] = []
@@ -191,12 +191,14 @@ def setup_simulation1() -> dict[str, list]:
         curr_species = "Bee"
         choosen_flower = None
         previous_flower = None
-        home_hive = hives_list[random(0, len(hives_list) - 1)]
+        destination = None
+        current_flower = None
+        home_hive = hives_list[random.randint(0, len(hives_list) - 1)]
         collection_start_time = 0 # most recent time the bee has collected
         count_carry_nectar = 0
         pollen = 0
-        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, home_hive, 
-                      collection_start_time, count_carry_nectar, pollen)
+        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, destination, home_hive, 
+                      collection_start_time, current_flower, count_carry_nectar, pollen)
         bees_list.append(bee)
     
     return {"Bees": bees_list, "Flowers": flowers_list, "Hives": hives_list, "Seeds": seed_list}
