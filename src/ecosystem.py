@@ -40,12 +40,20 @@ class Ecosystem:
             self.update_seeds_2()
         
     def update_bees_1(self, iteration: int) -> None:
-        for bee in self.bees:
-            flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
-            while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
-                flower_choice: Flower  = random.choice(self.flowers)
-            bee.current_flower(flower_choice)
-            bee.visit_flower(iteration)
+        if iteration == 0:
+            for bee in self.bees:
+                flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
+                while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
+                    flower_choice: Flower  = random.choice(self.flowers)
+                bee._current_flower(flower_choice)
+                bee.visit_flower(iteration)
+        else:
+            for bee in self.bees:
+                flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
+                while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
+                    flower_choice: Flower  = random.choice(self.flowers)
+                
+                bee._chosen_flower(flower_choice)
             
 
     

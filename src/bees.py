@@ -108,3 +108,7 @@ class Bee:
         self._current_flower.produce_seeds()
         self._current_flower.age_flower()
         
+    def move_bee(self) -> None:
+        self._current_flower.occupied(False)
+        self._previous_flower = self._current_flower
+        self._current_flower = self._chosen_flower
