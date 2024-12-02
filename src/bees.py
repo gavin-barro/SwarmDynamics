@@ -101,13 +101,13 @@ class Bee:
         self._current_flower.age_flower()
 
     def visit_hive(self) -> None:
-        self._current_flower.occupied(False)
+        self.current_flower.occupie = False
         self._previous_flower = self.current_flower
-        self._home_hive.storage_nectar(self._count_carry_nectar)
+        self._home_hive.store_nectar(self._count_carry_nectar)
         self._count_carry_nectar = 0
 
     def move_bee(self) -> None:
-        self._current_flower.occupied(False)
+        self.current_flower.occupied = False
         self._previous_flower = self._current_flower
         self._current_flower = self._destination
         
