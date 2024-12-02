@@ -9,8 +9,8 @@ class Hive:
     has-seed?
     '''
 
-    def __init__(self, age: int, species: str, producing_bees: bool, season_start: timedelta, 
-    season_end: timedelta, storage_nectar: int, has_seed: bool):
+    def __init__(self, age: int, species: str, producing_bees: bool, season_start: int, 
+    season_end: int, storage_nectar: int, has_seed: bool):
         self.age = age
         self.species = species
         self.producing_bees = producing_bees

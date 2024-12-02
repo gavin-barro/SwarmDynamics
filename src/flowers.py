@@ -5,7 +5,7 @@ from seeds import Seed
 class Flower:
     
     def __init__(self, age: int, species: str, flower_seeds: int, lifespan: int, 
-                 nectar_regeneration:float, start_of_bloom: timedelta, flower_nectar: float, occupied: bool, 
+                 nectar_regeneration:float, start_of_bloom: int, flower_nectar: float, occupied: bool, 
                  blocked_seeds: List[Seed]):
         self.age = age
         self.species = species
@@ -64,11 +64,11 @@ class Flower:
 
     # Start of Bloom
     @property
-    def start_of_bloom(self) -> timedelta:
+    def start_of_bloom(self) -> int:
         return self._start_of_bloom
 
     @start_of_bloom.setter
-    def start_of_bloom(self, value: timedelta) -> None:
+    def start_of_bloom(self, value: int) -> None:
         self._start_of_bloom = value
 
     # Flower Nectar
