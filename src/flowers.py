@@ -122,10 +122,10 @@ class Flower:
             return True
         return False
 
-    def age_flower(self):
+    def age_flower(self) -> bool:
         """Aging the flower over time."""
         self.age += 1
-        if self.age > self.lifespan:
+        if self.age > self.MAX_AGE:
             return True  # Flower dies after reaching lifespan
         return False
 
