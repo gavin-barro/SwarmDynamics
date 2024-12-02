@@ -104,7 +104,6 @@ class Flower:
         else:
             value = self._flower_nectar
             self._flower_nectar = 0
-        self._age += 1
         return value
     
     def produce_seeds(self):
