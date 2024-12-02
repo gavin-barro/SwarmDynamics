@@ -26,9 +26,10 @@ def main() -> None:
     simulation1 = setup_simulation1()
     # simulation2 = setup_simulation2()
     # simulation3 = setup_simulation3()
+    print(simulation1["Bees"])
     
     # Baseline simulation where invasive flowers don't dominate
-    ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"])
+    # ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"])
     
     # # Invasive flowers dominate because their nectar rewards are higher
     # ecosystem2 = Ecosystem(simulation2["Bees"], simulation2["Flowers"], simulation2["Hives"], simulation2["Seeds"])
@@ -40,8 +41,8 @@ def main() -> None:
 
 def setup_simulation1() -> dict[str, list]:
     """
-    Sets up base components to our environment
-
+    Sets up base components to our environment. This is our baseline simulation where invasive flowers don't dominate
+    
     Returns:
         dict: our parameters for simulation 1
     """
@@ -103,7 +104,7 @@ def setup_simulation1() -> dict[str, list]:
     #     "max_slots": 20  # maximum number of seeds a flower can create
     # }
 
-    hives_list = []
+    hives_list: list[Hive] = []
     for _ in range(2):
             age = 0
             species = "Hives"
@@ -114,7 +115,7 @@ def setup_simulation1() -> dict[str, list]:
             curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
             hives_list.append(curr_hive)
     
-    flowers_list = []
+    flowers_list: list[Flower] = []
     for _ in range(20):
             age = 0
             flower_seeds = 0
@@ -171,9 +172,20 @@ def setup_simulation1() -> dict[str, list]:
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
         
-    seed_list = []
+    seed_list: list[Seed] = []
+    for _ in range(60):
+        age = 0
+        cur_flower = flowers_list[random.randint(0, len(flowers_list) - 1)]
+        species = cur_flower.species()
+        life_span = cur_flower.lifespan()
+        start_of_bloom = cur_flower.start_of_bloom()
+        occupied = cur_flower.occupied()
+        nectar_regn = cur_flower.nectar_regeneration()
+        active = False
+        cur_seed = Seed(age, species, life_span, start_of_bloom, occupied, nectar_regn, active, cur_flower)
+        seed_list.append(cur_seed)
     
-    bees_list = []
+    bees_list: list[Bee] = []
     for _ in range(30):
         curr_age = 0
         curr_species = "Bee"

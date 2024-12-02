@@ -2,7 +2,7 @@ from flowers import Flower
 
 class Seed:
     def __init__(self, age: int, species: str, lifespan: int, start_of_bloom: int, occupied: bool,
-                 nectar_regeneration: float, active: bool, flower: Flower):
+                 nectar_regeneration: float, active: bool):
         self._age = age
         self._species = species
         self._lifespan = lifespan
@@ -10,7 +10,6 @@ class Seed:
         self._occupied = occupied
         self._nectar_regeneration = nectar_regeneration
         self._active = active
-        self._flower = flower
     
     @property
     def age(self) -> int:
@@ -67,14 +66,6 @@ class Seed:
     @active.setter
     def active(self, value: bool) -> None:
         self._active = value
-    
-    @property 
-    def flower(self) -> Flower:
-        return self.flower
-    
-    @active.setter
-    def flower(self, value: Flower) -> None:
-        self.flower = value
 
         
         
