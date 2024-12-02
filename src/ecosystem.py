@@ -62,7 +62,7 @@ class Ecosystem:
             flower_choice: Flower  = random.choice(self.flowers)
             if bee.visit_flower(flower_choice, iteration):
                 # Flower successfully pollinated
-                flower_choice.produce_seeds()  # Produce seeds if pollinated
+                flower_choice.update_flower()  # Produce seeds if pollinated
     
     def update_flowers_2(self) -> None:
         pass

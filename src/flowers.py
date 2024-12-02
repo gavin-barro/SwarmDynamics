@@ -106,4 +106,21 @@ class Flower:
             self._flower_nectar = 0
         self._age += 1
         return value
+    
+    def produce_seeds(self):
+        """Flower produces seeds if pollinated."""
+        if self.occupied:
+            # Seed production logic here, for simplicity assume 1 seed per tick
+            self.flower_seeds += 1
+            self.occupied = False  # Reset after seed production
+            return True
+        return False
+
+    def age_flower(self):
+        """Aging the flower over time."""
+        self.age += 1
+        if self.age > self.lifespan:
+            return False  # Flower dies after reaching lifespan
+        return True
+
         
