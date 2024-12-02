@@ -21,16 +21,18 @@ from hives import Hive
 
 
 def main() -> None:
-    defaults1 = setup_simulation1()
+    simulation1 = setup_simulation1()
+    # simulation2 = setup_simulation2()
+    # simulation3 = setup_simulation3()
     
     # Baseline simulation where invasive flowers don't dominate
-    simulation1 = Ecosystem(defaults1["Bees"], defaults1["Flowers"], defaults1["Hives"], defaults1["Seeds"])
+    ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"])
     
     # # Invasive flowers dominate because their nectar rewards are higher
-    # simulation2 = Ecosystem()
+    # ecosystem2 = Ecosystem(simulation2["Bees"], simulation2["Flowers"], simulation2["Hives"], simulation2["Seeds"])
     
     # # Bees prefer invasive flowers, causing the second bee species to take over
-    # simulation3 = Ecosystem()
+    # ecosystem3 = Ecosystem(simulation2["Bees"], simulation2["Flowers"], simulation2["Hives"], simulation2["Seeds"])
 
 
 
@@ -39,7 +41,7 @@ def setup_simulation1() -> dict[str, list]:
     Sets up base components to our environment
 
     Returns:
-        dict: our default parameters
+        dict: our parameters for simulation 1
     """
     
     # # A dictionary is used for scalabilty and reusability
@@ -98,6 +100,86 @@ def setup_simulation1() -> dict[str, list]:
     #     "max_nectar": 25,
     #     "max_slots": 20  # maximum number of seeds a flower can create
     # }
+
+    hives_list = []
+    for _ in range(2):
+            age = 0
+            species = "Hives"
+            producing_bees = False
+            season_start = 0
+            season_end = 1000
+            storage_nectar = 0
+            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
+            hives_list.append(curr_hive)
+    
+    seed_list = []
+    
+    flowers_list = []
+    
+    bees_list = []
+    for _ in range(30):
+        curr_age = 0
+        curr_species = "Bee"
+        choosen_flower = None
+        previous_flower = None
+        home_hive = hives_list[random(0, len(hives_list) - 1)]
+        collection_start_time = 0 # most recent time the bee has collected
+        count_carry_nectar = 0
+        pollen = 0
+        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, home_hive, 
+                      collection_start_time, count_carry_nectar, pollen)
+        bees_list.append(bee)
+    
+    return {"Bees": bees_list, "Flowers": flowers_list, "Hives": hives_list, "Seeds": seed_list}
+
+
+def setup_simulation2() -> dict[str, list]:
+    """
+    Sets up base components to our environment
+
+    Returns:
+        dict: our parameters for simulation 2
+    """
+    
+    hives_list = []
+    for _ in range(2):
+            age = 0
+            species = "Hives"
+            producing_bees = False
+            season_start = 0
+            season_end = 1000
+            storage_nectar = 0
+            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
+            hives_list.append(curr_hive)
+    
+    seed_list = []
+    
+    flowers_list = []
+    
+    bees_list = []
+    for _ in range(30):
+        curr_age = 0
+        curr_species = "Bee"
+        choosen_flower = None
+        previous_flower = None
+        home_hive = hives_list[random(0, len(hives_list) - 1)]
+        collection_start_time = 0 # most recent time the bee has collected
+        count_carry_nectar = 0
+        pollen = 0
+        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, home_hive, 
+                      collection_start_time, count_carry_nectar, pollen)
+        bees_list.append(bee)
+    
+    return {"Bees": bees_list, "Flowers": flowers_list, "Hives": hives_list, "Seeds": seed_list}
+
+
+def setup_simulation3() -> dict[str, list]:
+    """
+    Sets up base components to our environment
+
+    Returns:
+        dict: our parameters for simulation 3
+    """
 
     hives_list = []
     for _ in range(2):
