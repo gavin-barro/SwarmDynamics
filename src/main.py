@@ -10,6 +10,9 @@ import math
     information on the program will outputed. The idea of this simulation is 
     to simulate the introduction of an invasive species and its impact on an exsisting
     ecosystem. 
+    
+    Invasive flower gives more pollen than the other flowers in the ecosystem
+    The bees gravitate towards that flower
 
     Author: Gavin Barro and Austin Earl
     Version: 10/15/2024
@@ -21,7 +24,7 @@ def main() -> None:
 
 
 # sets up base components to our environment
-def setup() -> Ecosystem:
+def setup():
     pass
 
 if __name__ == "__main__":
