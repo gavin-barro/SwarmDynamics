@@ -96,8 +96,8 @@ class Flower:
         return self._blocked_seeds
 
     @blocked_seeds.setter
-    def blocked_seeds(self, value: list[Seed]) -> None:
-        self._blocked_seeds = value
+    def blocked_seeds(self, value: Seed) -> None:
+        self._blocked_seeds.append(value)
     
     def update_flower(self, value: int) -> int:
         self.occupied = True
@@ -117,7 +117,7 @@ class Flower:
             new_seed = Seed(age=0, species=self.species, lifespan=10, 
                             start_of_bloom=self._start_of_bloom, occupied=False, 
                             nectar_regeneration=self._nectar_regeneration, active=True)
-            self.blocked_seeds.append(new_seed)
+            self.blocked_seeds(new_seed)
             self.occupied = False  # Reset after seed production
             return True
         return False
