@@ -42,9 +42,10 @@ class Ecosystem:
     def update_bees_1(self, iteration: int) -> None:
         for bee in self.bees:
             flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
-            if bee.visit_flower(flower_choice, iteration):
-                # Flower successfully pollinated
-                flower_choice.produce_seeds()  # Produce seeds if pollinated
+            while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
+                if bee.visit_flower(flower_choice, iteration):
+                    # Flower successfully pollinated
+                    flower_choice.produce_seeds()  # Produce seeds if pollinated
     
     def update_flowers_1(self) -> None:
         pass
