@@ -66,7 +66,7 @@ def setup_simulation1() -> dict[str, list]:
             start = 0
             flower_nectar = 60
             occupied = False
-            blocked_seeds = 0
+            blocked_seeds = []
             curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
             flowers_list.append(curr_flower)
@@ -80,7 +80,7 @@ def setup_simulation1() -> dict[str, list]:
         start = 0
         flower_nectar = 60
         occupied = False
-        blocked_seeds = 0
+        blocked_seeds = []
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
@@ -94,7 +94,7 @@ def setup_simulation1() -> dict[str, list]:
         start = 0
         flower_nectar = 60
         occupied = False
-        blocked_seeds = 0
+        blocked_seeds = []
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
@@ -108,7 +108,7 @@ def setup_simulation1() -> dict[str, list]:
         start = 0
         flower_nectar = 60
         occupied = False
-        blocked_seeds = 0
+        blocked_seeds = []
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
