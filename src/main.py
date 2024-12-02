@@ -64,7 +64,7 @@ def setup_simulation1() -> dict[str, list]:
             species = "Red Flower"
             lifespan = 35
             nectar_regen = 1.5
-            start = 5
+            start = 0
             flower_nectar = 60
             occupied = False
             blocked_seeds = 0
@@ -78,7 +78,7 @@ def setup_simulation1() -> dict[str, list]:
         species = "Blue Flower"
         lifespan = 35
         nectar_regen = 1.5
-        start = 10
+        start = 0
         flower_nectar = 60
         occupied = False
         blocked_seeds = 0
@@ -92,7 +92,7 @@ def setup_simulation1() -> dict[str, list]:
         species = "Green Flower"
         lifespan = 30
         nectar_regen = 1.5
-        start = 10
+        start = 0
         flower_nectar = 60
         occupied = False
         blocked_seeds = 0
@@ -106,7 +106,7 @@ def setup_simulation1() -> dict[str, list]:
         species = "Invasive Flower"
         lifespan = 45
         nectar_regen = 3
-        start = 3
+        start = 0
         flower_nectar = 60
         occupied = False
         blocked_seeds = 0
