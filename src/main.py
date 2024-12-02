@@ -3,6 +3,8 @@ from ecosystem import Ecosystem
 import random
 from bees import Bee
 from hives import Hive
+from flowers import Flower
+from seeds import Seed
 
 """
     Driver module to be used to run our program.
@@ -115,6 +117,61 @@ def setup_simulation1() -> dict[str, list]:
     seed_list = []
     
     flowers_list = []
+    for _ in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Red Flower"
+            lifespan = 250
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            flowers_list.append(curr_flower)
+            
+    for _ in range(20):
+        age = 0
+        flower_seeds = 0
+        species = "Blue Flower"
+        lifespan = 350
+        nectar_regen = 3
+        start = 10
+        flower_nectar = 60
+        occupied = False
+        blocked_seeds = 0
+        curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+        flowers_list.append(curr_flower)
+            
+    for _ in range(20):
+        age = 0
+        flower_seeds = 0
+        species = "Green Flower"
+        lifespan = 300
+        nectar_regen = 3
+        start = 10
+        flower_nectar = 60
+        occupied = False
+        blocked_seeds = 0
+        curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+        flowers_list.append(curr_flower)
+    
+    for _ in range(10):
+        age = 0
+        flower_seeds = 0
+        species = "Invasive Flower"
+        lifespan = 300
+        nectar_regen = 6
+        start = 10
+        flower_nectar = 60
+        occupied = False
+        blocked_seeds = 0
+        curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+        flowers_list.append(curr_flower)
     
     bees_list = []
     for _ in range(30):
@@ -155,6 +212,58 @@ def setup_simulation2() -> dict[str, list]:
     seed_list = []
     
     flowers_list = []
+    for i in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Red Flower"
+            lifespan = 250
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
+        for i in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Blue Flower"
+            lifespan = 350
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
+        for i in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Green Flower"
+            lifespan = 300
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
+        for i in range(10):
+            age = 0
+            flower_seeds = 0
+            species = "Invasive Flower"
+            lifespan = 300
+            nectar_regen = 6
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
     
     bees_list = []
     for _ in range(30):
