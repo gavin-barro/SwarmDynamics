@@ -1,12 +1,11 @@
 from datetime import timedelta
-from typing import List
 from seeds import Seed
 
 class Flower:
     
     def __init__(self, age: int, species: str, flower_seeds: int, lifespan: int, 
                  nectar_regeneration:float, start_of_bloom: int, flower_nectar: float, occupied: bool, 
-                 blocked_seeds: List[Seed]):
+                 blocked_seeds: list[Seed]):
         self.age = age
         self.species = species
         self.flower_seeds = flower_seeds
