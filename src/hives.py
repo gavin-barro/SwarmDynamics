@@ -9,6 +9,9 @@ class Hive:
     has-seed?
     '''
 
+    # Make a new bee every 10 ticks
+    # When bees reach maximum nectar, they visit the hive - reset bees nectar to 0
+
     def __init__(self, age: int, species: str, producing_bees: bool, season_start: int, 
     season_end: int, storage_nectar: int, has_seed: bool):
         self._age = age
@@ -81,6 +84,6 @@ class Hive:
     @has_seed.setter
     def has_seed(self, value: bool) -> None:
         self._has_seed = value
-
     
-    
+    def store_nectar(self, nectar: int) -> None:
+        self._storage_nectar += nectar
