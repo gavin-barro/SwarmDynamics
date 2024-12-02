@@ -131,7 +131,6 @@ def setup_simulation1() -> dict[str, list]:
     for _ in range(30):
         curr_age = 0
         curr_species = "Bee"
-        choosen_flower = None
         previous_flower = None
         destination = None
         current_flower = None
@@ -139,7 +138,7 @@ def setup_simulation1() -> dict[str, list]:
         collection_start_time = 0 # most recent time the bee has collected
         count_carry_nectar = 0
         pollen = 0
-        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, destination, home_hive, 
+        bee = Bee(curr_age, curr_species, previous_flower, destination, home_hive, 
                       collection_start_time, current_flower, count_carry_nectar, pollen)
         bees_list.append(bee)
     
