@@ -20,7 +20,7 @@ import math
 
 
 def main() -> None:
-    defaults = setup()
+    defaults: dict = setup()
 
 
 
