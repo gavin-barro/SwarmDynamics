@@ -3,6 +3,7 @@ from bees import Bee
 from hives import Hive
 from seeds import Seed
 from flowers import Flower
+import matplotlib.pyplot as plt 
 
 class Ecosystem:
     BEE_WAITTIME: int = 8
@@ -41,8 +42,8 @@ class Ecosystem:
         if iteration == 0:
             for bee in self.bees:
                 flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
-                while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
-                    flower_choice: Flower  = random.choice(self.flowers)
+                # while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
+                flower_choice: Flower  = random.choice(self.flowers)
                 bee._current_flower(flower_choice)
                 bee.visit_flower(iteration)
         else:
@@ -78,3 +79,34 @@ class Ecosystem:
     
     def update_seeds_2(self) -> None:
         pass
+    
+    def plot_data(self, bee_counts, nectar_storages, flower_counts) -> None:
+        plt.figure(figsize=(10, 6))
+
+        # Plot the number of bees over time
+        plt.subplot(3, 1, 1)
+        plt.plot(bee_counts, label="Number of Bees", color="blue")
+        plt.title("Ecosystem Simulation: Number of Bees")
+        plt.xlabel("Iterations")
+        plt.ylabel("Bee Count")
+        plt.legend()
+
+        # Plot the total nectar stored in all hives over time
+        plt.subplot(3, 1, 2)
+        plt.plot(nectar_storages, label="Total Nectar in Hives", color="green")
+        plt.title("Ecosystem Simulation: Total Nectar in Hives")
+        plt.xlabel("Iterations")
+        plt.ylabel("Nectar Stored")
+        plt.legend()
+
+        # Plot the number of flowers over time (or by species if needed)
+        plt.subplot(3, 1, 3)
+        plt.plot(flower_counts, label="Number of Flowers", color="red")
+        plt.title("Ecosystem Simulation: Number of Flowers")
+        plt.xlabel("Iterations")
+        plt.ylabel("Flower Count")
+        plt.legend()
+
+        # Display the plots
+        plt.tight_layout()
+        plt.show()
