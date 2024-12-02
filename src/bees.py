@@ -4,12 +4,11 @@ from hives import Hive
 class Bee:
     MAX_NECTAR = 19
 
-    def __init__(self, age: int, species: str, chosen_flower: Flower, previous_flower: Flower, 
-                 destination: Flower, home_hive: Hive, collection_start_time: int, current_flower: Flower,  
+    def __init__(self, age: int, species: str, previous_flower, 
+                 destination , home_hive: Hive, collection_start_time: int, current_flower,  
                  count_carry_nectar: int, pollen: int):
         self._age = age
         self._species = species
-        self._chosen_flower = chosen_flower
         self._previous_flower = previous_flower
         self._destination = destination
         self._home_hive = home_hive
@@ -35,15 +34,7 @@ class Bee:
         self._species = value
 
     @property
-    def chosen_flower(self) -> Flower:
-        return self._chosen_flower
-
-    @chosen_flower.setter
-    def chosen_flower(self, value: Flower) -> None:
-        self._chosen_flower = value
-
-    @property
-    def previous_flower(self) -> Flower:
+    def previous_flower(self):
         return self._previous_flower
 
     @previous_flower.setter
@@ -51,7 +42,7 @@ class Bee:
         self._previous_flower = value
 
     @property
-    def destination(self) -> Flower:
+    def destination(self):
         return self._destination
 
     @destination.setter
@@ -75,7 +66,7 @@ class Bee:
         self._collection_start_time = value
 
     @property
-    def current_flower(self) -> Flower:
+    def current_flower(self):
         return self._current_flower
 
     @current_flower.setter
@@ -107,8 +98,14 @@ class Bee:
         self._count_carry_nectar += self._current_flower.update_flower(value)
         self._current_flower.produce_seeds()
         self._current_flower.age_flower()
-        
+
+    def visit_hive(self) -> None:
+        self._current_flower.occupied(False)
+        self._previous_flower = self.current_flower
+        self._home_hive.storage_nectar(self._count_carry_nectar)
+        self._count_carry_nectar = 0
+
     def move_bee(self) -> None:
         self._current_flower.occupied(False)
         self._previous_flower = self._current_flower
-        self._current_flower = self._chosen_flower
+        self._current_flower = self._destination
