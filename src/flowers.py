@@ -3,6 +3,8 @@ from seeds import Seed
 
 class Flower:
     
+    MAX_AGE: int = 20
+    
     def __init__(self, age: int, species: str, flower_seeds: int, lifespan: int, 
                  nectar_regeneration:float, start_of_bloom: int, flower_nectar: float, occupied: bool, 
                  blocked_seeds: list[Seed]):
