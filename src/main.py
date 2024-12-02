@@ -198,88 +198,7 @@ def setup_simulation2() -> dict[str, list]:
         dict: our parameters for simulation 2
     """
     
-    hives_list = []
-    for _ in range(2):
-            age = 0
-            species = "Hives"
-            producing_bees = False
-            season_start = 0
-            season_end = 1000
-            storage_nectar = 0
-            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
-            hives_list.append(curr_hive)
-    
-    seed_list = []
-    
-    flowers_list = []
-    for i in range(20):
-            age = 0
-            flower_seeds = 0
-            species = "Red Flower"
-            lifespan = 250
-            nectar_regen = 3
-            start = 10
-            flower_nectar = 60
-            occupied = False
-            blocked_seeds = 0
-            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
-            self.flowers.append(curr_flower)
-        for i in range(20):
-            age = 0
-            flower_seeds = 0
-            species = "Blue Flower"
-            lifespan = 350
-            nectar_regen = 3
-            start = 10
-            flower_nectar = 60
-            occupied = False
-            blocked_seeds = 0
-            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
-            self.flowers.append(curr_flower)
-        for i in range(20):
-            age = 0
-            flower_seeds = 0
-            species = "Green Flower"
-            lifespan = 300
-            nectar_regen = 3
-            start = 10
-            flower_nectar = 60
-            occupied = False
-            blocked_seeds = 0
-            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
-            self.flowers.append(curr_flower)
-        for i in range(10):
-            age = 0
-            flower_seeds = 0
-            species = "Invasive Flower"
-            lifespan = 300
-            nectar_regen = 6
-            start = 10
-            flower_nectar = 60
-            occupied = False
-            blocked_seeds = 0
-            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
-            self.flowers.append(curr_flower)
-    
-    bees_list = []
-    for _ in range(30):
-        curr_age = 0
-        curr_species = "Bee"
-        choosen_flower = None
-        previous_flower = None
-        home_hive = hives_list[random(0, len(hives_list) - 1)]
-        collection_start_time = 0 # most recent time the bee has collected
-        count_carry_nectar = 0
-        pollen = 0
-        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, home_hive, 
-                      collection_start_time, count_carry_nectar, pollen)
-        bees_list.append(bee)
-    
-    return {"Bees": bees_list, "Flowers": flowers_list, "Hives": hives_list, "Seeds": seed_list}
+    pass
 
 
 def setup_simulation3() -> dict[str, list]:
@@ -290,37 +209,7 @@ def setup_simulation3() -> dict[str, list]:
         dict: our parameters for simulation 3
     """
 
-    hives_list = []
-    for _ in range(2):
-            age = 0
-            species = "Hives"
-            producing_bees = False
-            season_start = 0
-            season_end = 1000
-            storage_nectar = 0
-            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
-            hives_list.append(curr_hive)
-    
-    seed_list = []
-    
-    flowers_list = []
-    
-    bees_list = []
-    for _ in range(30):
-        curr_age = 0
-        curr_species = "Bee"
-        choosen_flower = None
-        previous_flower = None
-        home_hive = hives_list[random(0, len(hives_list) - 1)]
-        collection_start_time = 0 # most recent time the bee has collected
-        count_carry_nectar = 0
-        pollen = 0
-        bee = Bee(curr_age, curr_species, choosen_flower, previous_flower, home_hive, 
-                      collection_start_time, count_carry_nectar, pollen)
-        bees_list.append(bee)
-    
-    return {"Bees": bees_list, "Flowers": flowers_list, "Hives": hives_list, "Seeds": seed_list}
-
+    pass
 
 if __name__ == "__main__":
     main()
