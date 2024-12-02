@@ -56,6 +56,11 @@ class Ecosystem:
                         bee.move_bee()
                         bee.visit_flower(iteration)
                 if bee.increment_remove_age(): self.bees.remove(bee)
+        
+        for flower in self.flowers:
+            if not flower.age_flower():
+                self.flowers.remove(flower)
+                
 
     
     def update_hives_1(self) -> None:
