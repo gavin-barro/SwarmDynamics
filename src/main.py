@@ -21,7 +21,13 @@ import math
 
 def main() -> None:
     defaults: dict = setup()
+    
+    simulation1 = Ecosystem()
+    run_simulation(simulation1)
 
+
+def run_simulation(simulation: Ecosystem):
+    pass
 
 
 def setup() -> dict:
