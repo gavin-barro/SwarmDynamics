@@ -57,7 +57,7 @@ class Ecosystem:
                     if not flower_choice.occupied:
                         bee.move_bee()
                         bee.visit_flower(iteration)
-            
+                if bee.increment_remove_age(): self.bees.remove(bee)
 
     
     def update_flowers_1(self) -> None:

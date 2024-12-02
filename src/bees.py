@@ -114,7 +114,7 @@ class Bee:
     def increment_remove_age(self) -> bool:
         self.age += 1
         rand = random.randint(0, 100)
-        if self.age > 15 and rand > 70:
+        if (self.age > 15 and rand > 70) or self.age >= 30:
             return True
         return False
             
