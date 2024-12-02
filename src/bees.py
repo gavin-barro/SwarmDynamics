@@ -103,7 +103,10 @@ class Bee:
             flower.occupied = True  # Flower is now occupied
             nectar_collected = flower.nectar_regeneration
             self.count_carry_nectar += nectar_collected  # Bee collects nectar
-            self.pollen += 1  # Bee collects pollen (if pollinating)
+            if flower.species == "Invasive Flower":
+                self.pollen += 6
+            else:
+                self.pollen += 3  # Bee collects pollen (if pollinating)
             flower.nectar_regeneration -= nectar_collected  # Flower loses nectar
             return True  # Pollinated
         return False  # Flower is occupied and cannot be visited
