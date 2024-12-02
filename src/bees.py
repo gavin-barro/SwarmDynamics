@@ -96,3 +96,14 @@ class Bee:
     @pollen.setter
     def pollen(self, value: int) -> None:
         self._pollen = value  
+        
+    def visit_flower(self, flower: Flower, iteration: int) -> bool:
+        """Bee visits the flower and collects nectar and pollen."""
+        if flower.occupied == False and iteration >= flower.start_of_bloom:
+            flower.occupied = True  # Flower is now occupied
+            nectar_collected = flower.nectar_regeneration
+            self.count_carry_nectar += nectar_collected  # Bee collects nectar
+            self.pollen += 1  # Bee collects pollen (if pollinating)
+            flower.nectar_regeneration -= nectar_collected  # Flower loses nectar
+            return True  # Pollinated
+        return False  # Flower is occupied and cannot be visited
