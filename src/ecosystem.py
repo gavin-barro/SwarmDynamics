@@ -33,8 +33,7 @@ class Ecosystem:
             self.update_seeds_1()
         #  TODO
         else:
-            self.update_bees_2(iteration)
-            self.update_flowers_2()
+            self.update_bees_flowers_2(iteration)
             self.update_hives_2()
             self.update_seeds_2()
         
@@ -66,16 +65,13 @@ class Ecosystem:
         pass
     
     # Simulation 2
-    def update_bees_2(self, iteration: int) -> None:
+    def update_bees_flowers_2(self, iteration: int) -> None:
         for bee in self.bees:
             #TODO make it so it leans towards invasive species
             flower_choice: Flower  = random.choice(self.flowers)
             if bee.visit_flower(flower_choice, iteration):
                 # Flower successfully pollinated
                 flower_choice.update_flower()  # Produce seeds if pollinated
-    
-    def update_flowers_2(self) -> None:
-        pass
     
     def update_hives_2(self) -> None:
         pass
