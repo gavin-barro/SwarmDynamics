@@ -126,7 +126,7 @@ class Flower:
         """Aging the flower over time."""
         self.age += 1
         if self.age > self.lifespan:
-            return False  # Flower dies after reaching lifespan
-        return True
+            return True  # Flower dies after reaching lifespan
+        return False
 
         
