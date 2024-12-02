@@ -10,9 +10,9 @@ class Ecosystem:
     
     def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive], seeds: list[Seed]):
         self.bees = bees
-        self.flowers = []
-        self.hives = []
-        self.seeds = []
+        self.flowers = flowers
+        self.hives = hives
+        self.seeds = seeds
         self.iterations = 0
         self.max_iterations = 1000
     
@@ -96,8 +96,18 @@ class Ecosystem:
             self.hives.append(curr_hive)
         
 
-    def make_seeds() -> None:
-        pass
+    def make_seeds(self) -> None:
+        for i in range(60):
+            cur_flower = rand.randint(0, len(self.flowers) - 1)
+            species = cur_flower.species()
+            life_span = cur_flower.lifespan()
+            start_of_bloom = cur_flower.start_of_bloom()
+            occupied = cur_flower.occupied()
+            nectar_regn = cur_flower.nectar_regeneration()
+            active = False
+            cur_seed = Seed(species, life_span, start_of_bloom, occupied, nectar_regn, active, cur_flower)
+            self.seeds.append(cur_seed)
+            
 
     def simulation() -> None:
         pass
