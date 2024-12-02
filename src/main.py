@@ -114,8 +114,6 @@ def setup_simulation1() -> dict[str, list]:
             curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
             hives_list.append(curr_hive)
     
-    seed_list = []
-    
     flowers_list = []
     for _ in range(20):
             age = 0
@@ -127,7 +125,7 @@ def setup_simulation1() -> dict[str, list]:
             flower_nectar = 60
             occupied = False
             blocked_seeds = 0
-            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+            curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
             flowers_list.append(curr_flower)
             
@@ -141,7 +139,7 @@ def setup_simulation1() -> dict[str, list]:
         flower_nectar = 60
         occupied = False
         blocked_seeds = 0
-        curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+        curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
             
@@ -155,7 +153,7 @@ def setup_simulation1() -> dict[str, list]:
         flower_nectar = 60
         occupied = False
         blocked_seeds = 0
-        curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+        curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
     
@@ -169,9 +167,11 @@ def setup_simulation1() -> dict[str, list]:
         flower_nectar = 60
         occupied = False
         blocked_seeds = 0
-        curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+        curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
+        
+    seed_list = []
     
     bees_list = []
     for _ in range(30):
