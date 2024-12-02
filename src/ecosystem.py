@@ -30,8 +30,59 @@ class Ecosystem:
                       collection_start_time, count_carry_nectar, pollen)
             self.bees.append(bee)
 
-    def make_flowers() -> None:
-        pass
+    def make_flowers(self) -> None:
+        for i in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Red Flower"
+            lifespan = 250
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
+        for i in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Blue Flower"
+            lifespan = 350
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
+        for i in range(20):
+            age = 0
+            flower_seeds = 0
+            species = "Green Flower"
+            lifespan = 300
+            nectar_regen = 3
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
+        for i in range(10):
+            age = 0
+            flower_seeds = 0
+            species = "Invasive Flower"
+            lifespan = 300
+            nectar_regen = 6
+            start = 10
+            flower_nectar = 60
+            occupied = False
+            blocked_seeds = 0
+            curr_flower = Flower(age, flower_seeds, lifespan, nectar_regen, 
+                                 start, flower_nectar, occupied, blocked_seeds)
+            self.flowers.append(curr_flower)
 
     def make_hives(self) -> None:
         for i in range(2):
