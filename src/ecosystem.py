@@ -1,5 +1,6 @@
 import random as rand
 from bees import Bee
+from hives import Hive
 
 # this is for simulation 1
 class Ecosystem:
@@ -30,8 +31,17 @@ class Ecosystem:
     def make_flowers() -> None:
         pass
 
-    def make_hives() -> None:
-        pass
+    def make_hives(self) -> None:
+        for i in range(2):
+            age = 0
+            species = "Hives"
+            producing_bees = False
+            season_start = 0
+            season_end = 1000
+            storage_nectar = 0
+            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
+            self.hives.append(curr_hive)
+        
 
     def make_seeds() -> None:
         pass
