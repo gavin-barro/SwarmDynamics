@@ -21,65 +21,66 @@ class Hive:
 
     # Age
     @property
-    def age(self):
+    def age(self) -> int:
         return self._age
 
     @age.setter
-    def age(self, value: int):
+    def age(self, value: int) -> None:
         self._age = value
 
     # Species
     @property
-    def species(self):
+    def species(self) -> str:
         return self._species
 
     @species.setter
-    def species(self, value: str):
+    def species(self, value: str) -> None:
         self._species = value
 
     # Producing Bees
     @property
-    def producing_bees(self):
+    def producing_bees(self) -> bool:
         return self._producing_bees
 
     @producing_bees.setter
-    def producing_bees(self, value: bool):
+    def producing_bees(self, value: bool) -> None:
         self._producing_bees = value
 
     # Season Start
     @property
-    def season_start(self):
+    def season_start(self) -> timedelta:
         return self._season_start
 
     @season_start.setter
-    def season_start(self, value: timedelta):
+    def season_start(self, value: timedelta) -> None:
         self._season_start = value
 
     # Season End
     @property
-    def season_end(self):
+    def season_end(self) -> timedelta:
         return self._season_end
 
     @season_end.setter
-    def season_end(self, value: timedelta):
+    def season_end(self, value: timedelta) -> None:
         self._season_end = value
 
     # Storage Nectar
     @property
-    def storage_nectar(self):
+    def storage_nectar(self) -> int:
         return self._storage_nectar
 
     @storage_nectar.setter
-    def storage_nectar(self, value: int):
+    def storage_nectar(self, value: int) -> None:
         self._storage_nectar = value
 
     # Has Seed
     @property
-    def has_seed(self):
+    def has_seed(self) -> bool:
         return self._has_seed
 
     @has_seed.setter
-    def has_seed(self, value: bool):
+    def has_seed(self, value: bool) -> None:
         self._has_seed = value
+
     
     
