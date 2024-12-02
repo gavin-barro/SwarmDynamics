@@ -6,15 +6,15 @@ class Flower:
     def __init__(self, age: int, species: str, flower_seeds: int, lifespan: int, 
                  nectar_regeneration:float, start_of_bloom: int, flower_nectar: float, occupied: bool, 
                  blocked_seeds: list[Seed]):
-        self.age = age
-        self.species = species
-        self.flower_seeds = flower_seeds
-        self.lifespan = lifespan
-        self.nectar_regeneration = nectar_regeneration
-        self.start_of_bloom = start_of_bloom
-        self.flower_nectar = flower_nectar
-        self.occupied = occupied
-        self.blocked_seeds = blocked_seeds
+        self._age = age
+        self._species = species
+        self._flower_seeds = flower_seeds
+        self._lifespan = lifespan
+        self._nectar_regeneration = nectar_regeneration
+        self._start_of_bloom = start_of_bloom
+        self._flower_nectar = flower_nectar
+        self._occupied = occupied
+        self._blocked_seeds = blocked_seeds
         
        # Age
     @property

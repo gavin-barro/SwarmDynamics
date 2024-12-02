@@ -11,13 +11,13 @@ class Hive:
 
     def __init__(self, age: int, species: str, producing_bees: bool, season_start: int, 
     season_end: int, storage_nectar: int, has_seed: bool):
-        self.age = age
-        self.species = species
-        self.producing_bees = producing_bees
-        self.season_start = season_start
-        self.season_end = season_end
-        self.storage_nectar = storage_nectar
-        self.has_seed = has_seed
+        self._age = age
+        self._species = species
+        self._producing_bees = producing_bees
+        self._season_start = season_start
+        self._season_end = season_end
+        self._storage_nectar = storage_nectar
+        self._has_seed = has_seed
 
     # Age
     @property
