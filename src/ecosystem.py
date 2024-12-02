@@ -43,8 +43,7 @@ class Ecosystem:
             for bee in self.bees:
                 flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
                 # while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
-                flower_choice: Flower  = random.choice(self.flowers)
-                bee._current_flower(flower_choice)
+                bee.current_flower(flower_choice)
                 bee.visit_flower(iteration)
         else:
             for bee in self.bees:
