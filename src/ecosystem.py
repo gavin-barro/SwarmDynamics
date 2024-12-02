@@ -1,13 +1,15 @@
 import random as rand
 from bees import Bee
 from hives import Hive
+from seeds import Seed
+from flowers import Flower
 
 # this is for simulation 1
 class Ecosystem:
     BEE_WAITTIME: int = 8
     
-    def __init__(self):
-        self.bees = []
+    def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive], seeds: list[Seed]):
+        self.bees = bees
         self.flowers = []
         self.hives = []
         self.seeds = []

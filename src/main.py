@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from ecosystem import Ecosystem
 import random
 from bees import Bee
+from hives import Hive
 
 """
     Driver module to be used to run our program.
@@ -99,13 +100,22 @@ def setup_simulation1() -> dict[str, list]:
     # }
 
     hives_list = []
+    for _ in range(2):
+            age = 0
+            species = "Hives"
+            producing_bees = False
+            season_start = 0
+            season_end = 1000
+            storage_nectar = 0
+            curr_hive = Hive(age, species, producing_bees, season_start, season_end, storage_nectar)
+            hives_list.append(curr_hive)
     
     seed_list = []
     
     flowers_list = []
     
     bees_list = []
-    for i in range(30):
+    for _ in range(30):
         curr_age = 0
         curr_species = "Bee"
         choosen_flower = None
