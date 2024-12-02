@@ -91,11 +91,11 @@ class Flower:
 
     # Blocked Seeds
     @property
-    def blocked_seeds(self) -> List[seeds]:
+    def blocked_seeds(self) -> list[Seed]:
         return self._blocked_seeds
 
     @blocked_seeds.setter
-    def blocked_seeds(self, value: List[seeds]) -> None:
+    def blocked_seeds(self, value: list[Seed]) -> None:
         self._blocked_seeds = value
     
         
