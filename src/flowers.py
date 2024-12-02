@@ -97,6 +97,13 @@ class Flower:
     def blocked_seeds(self, value: list[Seed]) -> None:
         self._blocked_seeds = value
     
-    def update_flower(self, value: int) -> None:
-        self._flower_nectar = self._flower_nectar - value + self._nectar_regeneration
-        self._age = self._age + 1
+    def update_flower(self, value: int) -> int:
+        curr_flower_nectar = self._flower_nectar - value + self._nectar_regeneration
+        if curr_flower_nectar > 0:
+            self._flower_nectar = curr_flower_nectar
+        else:
+            value = self._flower_nectar
+            self._flower_nectar = 0
+        self._age += 1
+        return value
+        
