@@ -98,6 +98,7 @@ class Flower:
         self._blocked_seeds = value
     
     def update_flower(self, value: int) -> int:
+        self.occupied = True
         curr_flower_nectar = self._flower_nectar - value + self._nectar_regeneration
         if curr_flower_nectar > 0:
             self._flower_nectar = curr_flower_nectar

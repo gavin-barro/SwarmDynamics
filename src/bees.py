@@ -2,7 +2,8 @@ from flowers import Flower
 from hives import Hive
 
 class Bee:
-    
+    MAX_NECTAR = 19
+
     def __init__(self, age: int, species: str, chosen_flower: Flower, previous_flower: Flower, 
                  destination: Flower, home_hive: Hive, collection_start_time: int, current_flower: Flower,  
                  count_carry_nectar: int, pollen: int):
@@ -96,17 +97,14 @@ class Bee:
     @pollen.setter
     def pollen(self, value: int) -> None:
         self._pollen = value  
+
+    def visit_flower(self, iteration: int) -> None:
+        value = 0
+        if self._current_flower.species == "Invasive Flower":
+            value = 6
+        else:
+            value = 3
+        self._count_carry_nectar += self._current_flower.update_flower(value)
+        self._current_flower.produce_seeds()
+        self._current_flower.age_flower()
         
-    def visit_flower(self, flower: Flower, iteration: int) -> bool:
-        """Bee visits the flower and collects nectar and pollen."""
-        if flower.occupied == False and iteration >= flower.start_of_bloom:
-            flower.occupied = True  # Flower is now occupied
-            nectar_collected = flower.nectar_regeneration
-            self.count_carry_nectar += nectar_collected  # Bee collects nectar
-            if flower.species == "Invasive Flower":
-                self.pollen += 6
-            else:
-                self.pollen += 3  # Bee collects pollen (if pollinating)
-            flower.nectar_regeneration -= nectar_collected  # Flower loses nectar
-            return True  # Pollinated
-        return False  # Flower is occupied and cannot be visited
