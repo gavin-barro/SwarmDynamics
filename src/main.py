@@ -48,7 +48,7 @@ def setup_simulation1() -> dict[str, list]:
     for _ in range(2):
             age = 0
             species = "Hives"
-            producing_bees = False
+            producing_bees = True
             season_start = 0
             season_end = 1000
             storage_nectar = 0
@@ -112,7 +112,7 @@ def setup_simulation1() -> dict[str, list]:
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
                                  start, flower_nectar, occupied, blocked_seeds)
         flowers_list.append(curr_flower)
-        
+    
     seed_list: list[Seed] = []
     for _ in range(60):
         age = 0

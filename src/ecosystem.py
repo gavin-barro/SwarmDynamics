@@ -61,13 +61,13 @@ class Ecosystem:
             if flower.age_flower():
                 self.flowers.remove(flower)
                 
-
-    
     def update_hives_1(self) -> None:
         for hive in self.hives:
             if hive.producing_bees and hive.storage_nectar > 5:
-                self.bees.append(Bee(0, hive.species, None, None, hive, 0, None, 0, 0))
-                hive.storage_nectar = 0
+                rand_flower: Flower = random.choice(self.flowers)
+                new_bee = Bee(0, "Bee", None, None, hive, 0, rand_flower, 0, 0)
+                self.bees.append(new_bee)
+                hive.storage_nectar -= 5
               
     
     def update_seeds_1(self) -> None:
