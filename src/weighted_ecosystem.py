@@ -5,7 +5,7 @@ from seeds import Seed
 from flowers import Flower
 import matplotlib.pyplot as plt 
 
-class Ecosystem:
+class weighted_ecosystem:
     BEE_WAITTIME: int = 8
     
     def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive]):
