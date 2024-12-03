@@ -64,7 +64,11 @@ class Ecosystem:
 
     
     def update_hives_1(self) -> None:
-        pass
+        for hive in self.hives:
+            if hive.producing_bees and hive.storage_nectar > 5:
+                self.bees.append(Bee(0, hive.species, None, None, hive, 0, None, 0, 0))
+                hive.storage_nectar = 0
+              
     
     def update_seeds_1(self) -> None:
         pass
