@@ -28,7 +28,7 @@ def main() -> None:
     # simulation3 = setup_simulation3()
     
     # Baseline simulation where invasive flowers don't dominate
-    ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], simulation1["Seeds"], 1)
+    ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"], 1)
     ecosystem1.simulation()
     print(ecosystem1)
     
@@ -68,7 +68,7 @@ def setup_simulation1() -> dict[str, list]:
             occupied = False
             blocked_seeds = []
             curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
+                                 start, flower_nectar, occupied)
             flowers_list.append(curr_flower)
             
     for _ in range(20):
@@ -82,7 +82,7 @@ def setup_simulation1() -> dict[str, list]:
         occupied = False
         blocked_seeds = []
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
+                                 start, flower_nectar, occupied)
         flowers_list.append(curr_flower)
             
     for _ in range(20):
@@ -96,7 +96,7 @@ def setup_simulation1() -> dict[str, list]:
         occupied = False
         blocked_seeds = []
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
+                                 start, flower_nectar, occupied)
         flowers_list.append(curr_flower)
     
     for _ in range(10):
@@ -110,7 +110,7 @@ def setup_simulation1() -> dict[str, list]:
         occupied = False
         blocked_seeds = []
         curr_flower = Flower(age, species, flower_seeds, lifespan, nectar_regen, 
-                                 start, flower_nectar, occupied, blocked_seeds)
+                                 start, flower_nectar, occupied)
         flowers_list.append(curr_flower)
     
     seed_list: list[Seed] = []

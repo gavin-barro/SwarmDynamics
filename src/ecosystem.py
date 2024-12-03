@@ -8,11 +8,10 @@ import matplotlib.pyplot as plt
 class Ecosystem:
     BEE_WAITTIME: int = 8
     
-    def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive], seeds: list[Seed], simulation_num: int):
+    def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive], simulation_num: int):
         self.bees = bees
         self.flowers = flowers
         self.hives = hives
-        self.seeds = seeds
         self.simulation_num = simulation_num
         self.iterations = 0
         self.max_iterations = 1000
@@ -31,7 +30,7 @@ class Ecosystem:
         if simulation_num == 1:
             self.update_bees_flowers_1(iteration)
             self.update_hives_1()
-            self.update_seeds_1()
+            #self.update_seeds_1()
         #  TODO
         else:
             self.update_bees_flowers_2(iteration)
@@ -55,9 +54,13 @@ class Ecosystem:
                     if not flower_choice.occupied:
                         bee.move_bee()
                         bee.visit_flower(iteration)
+                        bee.current_flower.increase_visits()
                 if bee.increment_remove_age(): self.bees.remove(bee)
         
         for flower in self.flowers:
+            if flower.produce_seeds():
+                self.flowers.append(Flower(0, flower.species, 0, flower.lifespan, flower.nectar_regeneration,
+                                           flower.start_of_bloom, 30, False))
             if flower.age_flower():
                 self.flowers.remove(flower)
                 

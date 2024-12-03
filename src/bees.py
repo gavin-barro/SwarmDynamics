@@ -97,7 +97,6 @@ class Bee:
         else:
             value = 3
         self._count_carry_nectar += self._current_flower.update_flower(value)
-        self._current_flower.produce_seeds()
         self._current_flower.age_flower()
 
     def visit_hive(self) -> None:

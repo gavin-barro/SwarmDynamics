@@ -2,12 +2,10 @@ from datetime import timedelta
 from seeds import Seed
 
 class Flower:
-    
     MAX_AGE: int = 20
     
     def __init__(self, age: int, species: str, flower_seeds: int, lifespan: int, 
-                 nectar_regeneration:float, start_of_bloom: int, flower_nectar: float, occupied: bool, 
-                 blocked_seeds: list[Seed]):
+                 nectar_regeneration:float, start_of_bloom: int, flower_nectar: float, occupied: bool):
         self._age = age
         self._species = species
         self._flower_seeds = flower_seeds
@@ -16,7 +14,7 @@ class Flower:
         self._start_of_bloom = start_of_bloom
         self._flower_nectar = flower_nectar
         self._occupied = occupied
-        self._blocked_seeds = blocked_seeds
+        self._number_visits = 0
         
        # Age
     @property
@@ -90,15 +88,18 @@ class Flower:
     def occupied(self, value: bool) -> None:
         self._occupied = value
 
-    # Blocked Seeds
+    # number_visits
     @property
-    def blocked_seeds(self) -> list[Seed]:
-        return self._blocked_seeds
-
-    @blocked_seeds.setter
-    def blocked_seeds(self, value: Seed) -> None:
-        self._blocked_seeds.append(value)
+    def number_visits(self) -> int:
+        return self.number_visits
     
+    @occupied.setter
+    def number_visits(self, value: int) -> None:
+        self._number_visits += value
+
+    def increase_visits(self):
+        self._number_visits += 1
+
     def update_flower(self, value: int) -> int:
         self.occupied = True
         curr_flower_nectar = self._flower_nectar - value + self._nectar_regeneration
@@ -109,16 +110,12 @@ class Flower:
             self._flower_nectar = 0
         return value
     
-    def produce_seeds(self):
-        """Flower produces seeds if pollinated."""
-        if self.occupied:
-            # Seed production logic here, for simplicity assume 1 seed per tick
-            self.flower_seeds += 1
-            new_seed = Seed(age=0, species=self.species, lifespan=10, 
-                            start_of_bloom=self._start_of_bloom, occupied=False, 
-                            nectar_regeneration=self._nectar_regeneration, active=True)
-            self._blocked_seeds.append(new_seed)
-            self.occupied = False  # Reset after seed production
+    def produce_seeds(self) -> bool:
+        if self._number_visits >= 3 and self._species != "Invasive Flower":
+            self.number_visits = 0
+            return True
+        elif self._number_visits >= 2 and self._species == "Invasive Flower":
+            self.number_visits = 0
             return True
         return False
 
