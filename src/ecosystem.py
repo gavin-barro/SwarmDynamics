@@ -8,13 +8,12 @@ import matplotlib.pyplot as plt
 class Ecosystem:
     BEE_WAITTIME: int = 8
     
-    def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive], simulation_num: int):
+    def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive]):
         self.bees = bees
         self.flowers = flowers
         self.hives = hives
         self.iterations = 0
         self.max_iterations = 1000
-        self.simulation_num = simulation_num
             
 
     def simulation(self) -> None:
@@ -36,12 +35,8 @@ class Ecosystem:
         self.plot_data(bee_counts, nectar_storages, flower_counts)
 
     def tick(self, iteration: int) -> None:
-        if self.simulation_num == 1:
             self.update_bees_flowers(iteration)
             self.update_hives()
-        else:
-            # TODO
-            pass
         
     def update_bees_flowers(self, iteration: int) -> None:
         if iteration == 0:
