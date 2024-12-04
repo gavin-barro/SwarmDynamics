@@ -33,10 +33,10 @@ def main() -> None:
     ecosystem1.simulation()
     print(ecosystem1)
     
-    # Invasive flowers dominate because their nectar rewards are higher
-    ecosystem2 = WeightedEcosystem(simulation2["Bees"], simulation2["Flowers"], 
-                            simulation2["Hives"], simulation2["Seeds"])
-    ecosystem2.simulation()
+    # # Invasive flowers dominate because their nectar rewards are higher
+    # ecosystem2 = WeightedEcosystem(simulation2["Bees"], simulation2["Flowers"], 
+    #                         simulation2["Hives"], simulation2["Seeds"])
+    # ecosystem2.simulation()
 
 
 
