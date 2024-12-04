@@ -18,15 +18,39 @@ class WeightedEcosystem:
 
     def simulation(self) -> None:
         """Run the simulation."""
-        # while self.iterations < self.max_iterations:
-        #     self.update_ecosystem()
-        #     self.iterations += 1
-        for i in range(20):
-            self.tick(i)
+        bee_counts = []
+        nectar_storages = []
+        red_flower_counts = []
+        green_flower_counts = []
+        blue_flower_counts = []
+        invasive_flower_counts = []
+        while self.iterations < self.max_iterations:
+            self.tick(self.iterations)
+            self.iterations += 1
+            
+            # Collect data for plotting
+            bee_counts.append(len(self.bees))
+            total_nectar = sum(hive.storage_nectar for hive in self.hives)
+            nectar_storages.append(total_nectar)
+            
+            # Count flowers by type
+            red_count = sum(1 for flower in self.flowers if flower.species == "Red Flower")
+            green_count = sum(1 for flower in self.flowers if flower.species == "Green Flower")
+            blue_count = sum(1 for flower in self.flowers if flower.species == "Blue Flower")
+            invasive_count = sum(1 for flower in self.flowers if flower.species == "Invasive Flower")
+
+            red_flower_counts.append(red_count)
+            green_flower_counts.append(green_count)
+            blue_flower_counts.append(blue_count)
+            invasive_flower_counts.append(invasive_count)
+        
+        # Plot the data after the simulation
+        self.plot_data(bee_counts, nectar_storages, red_flower_counts, green_flower_counts, 
+                       blue_flower_counts, invasive_flower_counts)
 
     def tick(self, iteration: int) -> None:
-        self.update_bees_flowers(iteration)
-        self.update_hives()
+            self.update_bees_flowers(iteration)
+            self.update_hives()
         
     def update_bees_flowers(self, iteration: int) -> None:
         if iteration == 0:
@@ -63,29 +87,33 @@ class WeightedEcosystem:
                 self.bees.append(new_bee)
                 hive.storage_nectar -= 5
               
-    def plot_data(self, bee_counts, nectar_storages, flower_counts) -> None:
-        plt.figure(figsize=(10, 6))
+    def plot_data(self, bee_counts: list[int], nectar_storages: list[int], red_counts: list[int], 
+                  green_counts: list[int], blue_counts: list[int], invasive_counts: list[int]) -> None:
+        plt.figure(figsize=(10, 8))
 
         # Plot the number of bees over time
-        plt.subplot(3, 1, 1)
-        plt.plot(bee_counts, label="Number of Bees", color="blue")
+        plt.subplot(4, 1, 1)
+        plt.plot(bee_counts, label="Number of Bees", color="yellow")
         plt.title("Ecosystem Simulation: Number of Bees")
         plt.xlabel("Iterations")
         plt.ylabel("Bee Count")
         plt.legend()
 
         # Plot the total nectar stored in all hives over time
-        plt.subplot(3, 1, 2)
-        plt.plot(nectar_storages, label="Total Nectar in Hives", color="green")
+        plt.subplot(4, 1, 2)
+        plt.plot(nectar_storages, label="Total Nectar in Hives", color="orange")
         plt.title("Ecosystem Simulation: Total Nectar in Hives")
         plt.xlabel("Iterations")
         plt.ylabel("Nectar Stored")
         plt.legend()
 
-        # Plot the number of flowers over time (or by species if needed)
-        plt.subplot(3, 1, 3)
-        plt.plot(flower_counts, label="Number of Flowers", color="red")
-        plt.title("Ecosystem Simulation: Number of Flowers")
+        # Plot the counts for each flower type
+        plt.subplot(4, 1, 3)
+        plt.plot(red_counts, label="Red Flowers", color="red")
+        plt.plot(green_counts, label="Green Flowers", color="green")
+        plt.plot(blue_counts, label="Blue Flowers", color="blue")
+        plt.plot(invasive_counts, label="Invasive Flowers", color="black")
+        plt.title("Ecosystem Simulation: Flower Counts by Species")
         plt.xlabel("Iterations")
         plt.ylabel("Flower Count")
         plt.legend()

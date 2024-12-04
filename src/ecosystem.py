@@ -45,7 +45,6 @@ class Ecosystem:
             invasive_flower_counts.append(invasive_count)
         
         # Plot the data after the simulation
-        print(red_flower_counts)
         self.plot_data(bee_counts, nectar_storages, red_flower_counts, green_flower_counts, 
                        blue_flower_counts, invasive_flower_counts)
 
