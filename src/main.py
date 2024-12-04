@@ -25,18 +25,18 @@ from seeds import Seed
 
 def main() -> None:
     simulation1 = setup_simulation()
-    simulation2 = setup_simulation2()
+    simulation2 = setup_simulation()
     # simulation3 = setup_simulation3()
     
     # Baseline simulation where invasive flowers don't dominate
     ecosystem1 = Ecosystem(simulation1["Bees"], simulation1["Flowers"], simulation1["Hives"])
-    ecosystem1.simulation()
+    #ecosystem1.simulation()
     print(ecosystem1)
     
     # # Invasive flowers dominate because their nectar rewards are higher
-    # ecosystem2 = WeightedEcosystem(simulation2["Bees"], simulation2["Flowers"], 
-    #                         simulation2["Hives"], simulation2["Seeds"])
-    # ecosystem2.simulation()
+    ecosystem2 = WeightedEcosystem(simulation2["Bees"], simulation2["Flowers"], 
+                             simulation2["Hives"])
+    ecosystem2.simulation()
 
 
 
