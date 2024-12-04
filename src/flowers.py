@@ -111,11 +111,7 @@ class Flower:
         return value
     
     def produce_seeds(self) -> bool:
-        if self._number_visits >= 3 and self._species != "Invasive Flower":
-            self.number_visits = 0
-            return True
-        elif self._number_visits >= 2 and self._species == "Invasive Flower":
-            self.number_visits = 0
+        if self._number_visits >= 3:
             return True
         return False
 
