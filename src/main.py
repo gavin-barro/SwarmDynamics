@@ -35,8 +35,6 @@ def main() -> None:
     ecosystem2 = WeightedEcosystem(simulation2["Bees"], simulation2["Flowers"], simulation2["Hives"])
     ecosystem2.simulation()
 
-
-
 def setup_simulation() -> dict[str, list]:
     """
     Sets up base components to our environment. This is our baseline simulation where invasive flowers don't dominate
