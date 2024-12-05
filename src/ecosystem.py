@@ -14,6 +14,7 @@ class Ecosystem:
         self.hives = hives
         self.iterations = 0
         self.max_iterations = 1000
+        self.flower_types = ["Invasive Flower", "Red Flower", "Blue Flower", "Green Flower"]
             
 
     def simulation(self) -> None:
@@ -55,8 +56,16 @@ class Ecosystem:
     def update_bees_flowers(self, iteration: int) -> None:
         if iteration == 0:
             for bee in self.bees:
-                flower_choice: Flower  = random.choice(self.flowers)  # Bee chooses a flower randomly
-                # while flower_choice.flower_nectar > 0 and not flower_choice.occupied:
+                flower_type = random.choice(self.flower_types)
+                flower_choice = None
+                for flower in self.flowers:
+                    if flower.species == flower_type and not flower.occupied:
+                        flower_choice = flower
+                        break
+
+                if flower_choice == None:
+                    flower_choice = random.choice(self.flowers)
+
                 bee.current_flower = flower_choice
                 bee.visit_flower(iteration)
         else:
@@ -64,7 +73,14 @@ class Ecosystem:
                 if bee._count_carry_nectar >= bee.MAX_NECTAR:
                     bee.visit_hive()
                 else:
-                    flower_choice: Flower = random.choice(self.flowers)  # Bee chooses a flower randomly
+                    flower_type = random.choice(self.flower_types)
+                    flower_choice = None
+                    for flower in self.flowers:
+                        if flower.species == flower_type and not flower.occupied:
+                            flower_choice = flower
+                            break
+                    if flower_choice == None:
+                        flower_choice = random.choice(self.flowers)
                     bee.destination = flower_choice
                     if not flower_choice.occupied:
                         bee.move_bee()

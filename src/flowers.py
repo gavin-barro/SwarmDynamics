@@ -115,6 +115,13 @@ class Flower:
             return True
         return False
 
+    def produce_seeds_weighted(self) -> bool:
+        if self._number_visits >= 4 and self._species != "Invasive Flower":
+            return True
+        elif self._number_visits >= 2 and self._species == "Invasive Flower":
+            return True
+        return False
+
     def age_flower(self) -> bool:
         """Aging the flower over time."""
         self.age += 1

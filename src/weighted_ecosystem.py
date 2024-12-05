@@ -90,7 +90,7 @@ class WeightedEcosystem:
                 if bee.increment_remove_age(): self.bees.remove(bee)
         
         for flower in self.flowers:
-            if flower.produce_seeds():
+            if flower.produce_seeds_weighted():
                 self.flowers.append(Flower(0, flower.species, 0, flower.lifespan, flower.nectar_regeneration,
                                            flower.start_of_bloom, 30, False))
             if flower.age_flower():
