@@ -21,20 +21,22 @@ class WeightedEcosystem:
     def simulation(self) -> None:
         """Run the simulation."""
         bee_counts = []
-        nectar_storages = []
+        hive1_nectar = []
+        hive2_nectar = []
         red_flower_counts = []
         green_flower_counts = []
         blue_flower_counts = []
         invasive_flower_counts = []
+
         while self.iterations < self.max_iterations:
             self.tick(self.iterations)
             self.iterations += 1
-            
+
             # Collect data for plotting
             bee_counts.append(len(self.bees))
-            total_nectar = sum(hive.storage_nectar for hive in self.hives)
-            nectar_storages.append(total_nectar)
-            
+            hive1_nectar.append(self.hives[0].storage_nectar)
+            hive2_nectar.append(self.hives[1].storage_nectar)
+
             # Count flowers by type
             red_count = sum(1 for flower in self.flowers if flower.species == "Red Flower")
             green_count = sum(1 for flower in self.flowers if flower.species == "Green Flower")
@@ -45,10 +47,10 @@ class WeightedEcosystem:
             green_flower_counts.append(green_count)
             blue_flower_counts.append(blue_count)
             invasive_flower_counts.append(invasive_count)
-        
+
         # Plot the data after the simulation
-        self.plot_data(bee_counts, nectar_storages, red_flower_counts, green_flower_counts, 
-                       blue_flower_counts, invasive_flower_counts)
+        self.plot_data(bee_counts, hive1_nectar, hive2_nectar, red_flower_counts, 
+                    green_flower_counts, blue_flower_counts, invasive_flower_counts)
 
     def tick(self, iteration: int) -> None:
             self.update_bees_flowers(iteration)
@@ -104,9 +106,10 @@ class WeightedEcosystem:
                 self.bees.append(new_bee)
                 hive.storage_nectar -= 5
               
-    def plot_data(self, bee_counts: list[int], nectar_storages: list[int], red_counts: list[int], 
-                  green_counts: list[int], blue_counts: list[int], invasive_counts: list[int]) -> None:
-        plt.figure(figsize=(10, 8))
+    def plot_data(self, bee_counts: list[int], hive1_nectar: list[int], hive2_nectar: list[int], 
+              red_counts: list[int], green_counts: list[int], blue_counts: list[int], 
+              invasive_counts: list[int]) -> None:
+        plt.figure(figsize=(10, 10))
 
         # Plot the number of bees over time
         plt.subplot(4, 1, 1)
@@ -116,10 +119,11 @@ class WeightedEcosystem:
         plt.ylabel("Bee Count")
         plt.legend()
 
-        # Plot the total nectar stored in all hives over time
+        # Plot the nectar stored in each hive over time
         plt.subplot(4, 1, 2)
-        plt.plot(nectar_storages, label="Total Nectar in Hives", color="orange")
-        plt.title("Ecosystem Simulation: Total Nectar in Hives")
+        plt.plot(hive1_nectar, label="Hive 1 Nectar", color="orange")
+        plt.plot(hive2_nectar, label="Hive 2 Nectar", color="brown")
+        plt.title("Ecosystem Simulation: Nectar Levels in Hives")
         plt.xlabel("Iterations")
         plt.ylabel("Nectar Stored")
         plt.legend()
