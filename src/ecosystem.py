@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 class Ecosystem:
     BEE_WAITTIME: int = 8
+    NECTAR_DECREASE_RATE: int = 48
     
     def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive]):
         self.bees = bees
@@ -91,6 +92,7 @@ class Ecosystem:
                 if bee.increment_remove_age(): self.bees.remove(bee)
         
         for flower in self.flowers:
+            flower.regenerate_nectar()
             if flower.produce_seeds():
                 self.flowers.append(Flower(0, flower.species, 0, flower.lifespan, flower.nectar_regeneration,
                                            flower.start_of_bloom, 30, False))
@@ -102,8 +104,8 @@ class Ecosystem:
             if hive.producing_bees and hive.storage_nectar > 5:
                 rand_flower: Flower = random.choice(self.flowers)
                 new_bee = Bee(0, "Bee", None, None, hive, 0, rand_flower, 0, 0)
+                new_bee.home_hive.storage_nectar -= self.NECTAR_DECREASE_RATE
                 self.bees.append(new_bee)
-                hive.storage_nectar -= 5
               
     def plot_data(self, bee_counts: list[int], hive1_nectar: list[int], hive2_nectar: list[int], 
               red_counts: list[int], green_counts: list[int], blue_counts: list[int], 

@@ -128,5 +128,11 @@ class Flower:
         if self.age > self.MAX_AGE:
             return True  # Flower dies after reaching lifespan
         return False
+    
+    def regenerate_nectar(self) -> None:
+        """ Regenerate nectar based on the flower's nectar regeneration rate. """
+        self.flower_nectar += self.nectar_regeneration
+        if self.flower_nectar > 100:  # Maximum nectar limit
+            self.flower_nectar = 100
 
         
