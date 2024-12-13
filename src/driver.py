@@ -9,7 +9,7 @@ from seeds import Seed
 
 """
     Driver module to be used to run our program.
-    TODO: This python module runs the simulation and collections information on it.
+    This python module runs the simulation and collections information on it.
     It will run the simulation for a select amount of ticks and every tick the 
     information on the program will outputed. The idea of this simulation is 
     to simulate the introduction of an invasive species and its impact on an exsisting
