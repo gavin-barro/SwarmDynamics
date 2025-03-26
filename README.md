@@ -55,6 +55,6 @@ bloom times. In the third scenario, bees of one species favor invasive flowers, 
 This model allows users to study pollination dynamics, the impact of invasive species, and how species-specific preferences influence 
 biodiversity and ecosystem stability.
 
-![Diagram of the system](images/system_diagram.png)
+![Figure 1: An example of their simulation](images/figure1.png)
 
 # Acknowledgements
