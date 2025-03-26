@@ -1,3 +1,7 @@
+# ISAT 441: Final Project
+
+Authors: Gavin Barro and Austin Earl
+
 ## Project Title
 Simulating Invasive Hives
 
