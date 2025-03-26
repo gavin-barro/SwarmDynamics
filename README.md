@@ -5,9 +5,8 @@ Simulating Invasive Hives
 Gavin Barro and Austin Earl
 
 # About
-As a part of our final project for ISAT 441, we decided to simulate the effect of invasive hives on local ecosystemsFor our ISAT 441 project, 
-we developed a simulation to explore the impact of invasive hives on local ecosystems, analyzing their effects on native species and environmental
-balance.
+For our ISAT 441 project, we developed a simulation to explore the impact of invasive hives on local ecosystems, analyzing 
+their effects on native species and environmental balance.
 
 # Problem Statement
 This project involved simulating a dynamic hive, flower, and bee ecosystem to explore how nectar availability influences 
