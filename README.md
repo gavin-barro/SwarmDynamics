@@ -1,13 +1,13 @@
 ## Project Title
 Simulating Invasive Hives
 
-## Authors
+# Authors
 Gavin Barro and Austin Earl
 
-## About
+# About
 As a part of our final project for ISAT 441, we decided to simulate the effect of invasive hives on local ecosystems
 
-## Problem Statement
+# Problem Statement
 This project involved simulating a dynamic hive, flower, and bee ecosystem to explore how nectar availability influences 
 the production and survival of both bees and flowers, while ensuring a sustainable balance between resource consumption 
 and regeneration. To deepen our analysis, we developed two versions of this ecosystem: one featuring only native flower 
@@ -16,7 +16,7 @@ of invasive species on resource competition among flowers, the sustainability of
 resilience of the ecosystem. This approach allowed us to examine how changes in species composition can disrupt ecological
 equilibrium and impact long-term sustainability.
 
-## Problem Significance
+# Problem Significance
 The ease and frequency of global transportation have significantly increased the movement of species across geographic boundaries,
 often leading to the unintended introduction of invasive species into new ecosystems. Additionally, human development of previously
 untouched areas disrupts the balance of existing ecosystems, creating opportunities for non-native species to establish themselves. 
@@ -25,9 +25,7 @@ These species outcompete native flora and fauna for resources, disrupt food webs
 the sustainability of the ecosystems they invade[1]. Understanding and mitigating the impacts of invasive species are critical to 
 preserving ecological health and ensuring the resilience of both natural and human-altered environments.
 
-
-## Conceptual Model
-
+# Conceptual Model
 Our conceptual model draws inspiration from the Beecology Project[2], which addresses the alarming decline in wild pollinators, 
 focusing on their abundance, diversity, and geographic distribution. This decline poses a critical threat to ecosystem health and 
 biodiversity, with insufficient ecological data hampering effective conservation efforts. The Beecology Project engages citizen 
@@ -52,12 +50,14 @@ This model allows users to study pollination dynamics, the impact of invasive sp
 biodiversity and ecosystem stability.
 
 ![Figure 1: An example of their simulation](images/figure1.png)
+
 *Figure 1: An example of their simulation*
 
 ![Figure 2. Various bee species and flower they chose to model](images/figure2.png)
+
 *Figure 2. Various bee species and flower they chose to model*
 
-## Computational Model
+# Computational Model
 Our computational model simulates an ecosystem comprising bees, hives, and multiple flower species, including both native and invasive varieties.
 The model focuses on key interactions such as nectar collection, hive resource dynamics, and the life cycles of flowers and bees. Bees forage for 
 nectar, contributing to hive resources, while flowers regenerate and reproduce, creating a dynamic interplay between species. These interactions 
@@ -91,12 +91,12 @@ over time. The simulation runs for a set number of iterations, collecting data t
 
 We will discuss the results of our simulations below.
 
-## Results
+# Results
 Our results section is broken up into two categories, based on our two simulations: Random Flower Selection, where there is no invasive species and 
 Weighted Flower Selection, where there is an invasive species.
 
 
 
-## Acknowledgements
+# Acknowledgements
 
 
