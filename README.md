@@ -1,7 +1,3 @@
-# ISAT 441: Final Project
-
-Authors: Gavin Barro and Austin Earl
-
 ## Project Title
 Simulating Invasive Hives
 
@@ -56,8 +52,10 @@ This model allows users to study pollination dynamics, the impact of invasive sp
 biodiversity and ecosystem stability.
 
 ![Figure 1: An example of their simulation](images/figure1.png)
+*Figure 1: An example of their simulation*
 
-![Figure 2. Various bee species and flower they chose to model](images/figure1.png)
+![Figure 2. Various bee species and flower they chose to model](images/figure2.png)
+*Figure 2. Various bee species and flower they chose to model*
 
 ## Computational Model
 Our computational model simulates an ecosystem comprising bees, hives, and multiple flower species, including both native and invasive varieties.
