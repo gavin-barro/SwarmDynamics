@@ -1,7 +1,6 @@
 import random
 from bees import Bee
 from hives import Hive
-from seeds import Seed
 from flowers import Flower
 import matplotlib.pyplot as plt 
 

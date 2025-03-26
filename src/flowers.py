@@ -1,5 +1,4 @@
 from datetime import timedelta
-from seeds import Seed
 
 class Flower:
     MAX_AGE: int = 20

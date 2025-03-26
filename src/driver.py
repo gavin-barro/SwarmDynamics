@@ -5,7 +5,6 @@ import random
 from bees import Bee
 from hives import Hive
 from flowers import Flower
-from seeds import Seed
 
 """
     Driver module to be used to run our program.
