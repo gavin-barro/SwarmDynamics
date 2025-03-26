@@ -57,4 +57,48 @@ biodiversity and ecosystem stability.
 
 ![Figure 1: An example of their simulation](images/figure1.png)
 
-# Acknowledgements
+![Figure 2. Various bee species and flower they chose to model](images/figure1.png)
+
+## Computational Model
+Our computational model simulates an ecosystem comprising bees, hives, and multiple flower species, including both native and invasive varieties.
+The model focuses on key interactions such as nectar collection, hive resource dynamics, and the life cycles of flowers and bees. Bees forage for 
+nectar, contributing to hive resources, while flowers regenerate and reproduce, creating a dynamic interplay between species. These interactions 
+form the foundation for exploring ecological relationships and the impact of invasive species within a simplified yet robust framework.
+
+To streamline the simulation, we introduced several simplifying assumptions. Nectar regeneration occurs at a fixed rate, and external factors such
+as weather, seasons, and climate changes are excluded from the model. Hive dynamics are influenced solely by nectar collection, omitting other 
+potential factors like pollen. These simplifications allowed us to concentrate on the core processes shaping the ecosystem while ensuring the model 
+remains computationally efficient and focused on the primary ecological dynamics.[3]
+
+The primary differences between the two simulations lie in their complexity and focus. The first simulation emphasizes generalized interactions 
+between agents, such as movement patterns and satisfaction based on neighborhood characteristics. This model explores social dynamics and emergent 
+patterns by simulating the movement of agents with varying preferences. In contrast, the second simulation incorporates a more specific ecological 
+system involving bees, hives, and flowers. It emphasizes biological and ecological processes like nectar collection, resource dynamics, and species 
+interactions, providing a focused exploration of ecological relationships and the potential impact of invasive species.
+
+The changes between the two simulations were made to tailor the model to different research goals. The first model makes it well-suited for studying 
+broad social behaviors or spatial segregation patterns. The second model aims to capture biological realism, allowing for more nuanced exploration of 
+ecological systems. These changes were driven by a need to align the model's scope with specific research questions, such as understanding invasive 
+species' ecological impacts or the interplay between resource dynamics and species survival. The transition from a general agent-based framework to a 
+detailed ecological model reflects a shift in focus from abstract interactions to domain-specific processes.
+
+The code defines a simulation ecosystem consisting of flowers, bees, and hives. The Flower class models various types of flowers, tracking their age, 
+species, nectar levels, and seed production, with methods to update nectar, produce seeds, and age the flower. The Hive class represents a hive, managing 
+bees, nectar storage, and the seasonal cycle, with methods for storing nectar. The Bee class models individual bees, keeping track of their age, species, 
+nectar collection, and movement between flowers and hives. Bees visit flowers to collect nectar, which is then stored in the hive. They can also age and 
+eventually die. The WeightedEcosystem class ties everything together, running a simulation where bees visit flowers, collect nectar, and store it in hives 
+while tracking the population of different flower species and the amount of nectar in the hives over multiple iterations. The ecosystem includes multiple 
+flower species, such as invasive flowers and various colored flowers, and simulates the interactions between bees, flowers, and hives to observe changes 
+over time. The simulation runs for a set number of iterations, collecting data to plot the results of the ecosystem's dynamics.
+
+We will discuss the results of our simulations below.
+
+## Results
+Our results section is broken up into two categories, based on our two simulations: Random Flower Selection, where there is no invasive species and 
+Weighted Flower Selection, where there is an invasive species.
+
+
+
+## Acknowledgements
+
+
