@@ -140,5 +140,5 @@ https://beecology.wpi.edu/website/home
 
 
 # Acknowledgements
-
+We would like to thank Dr. Upal for his invaluable guidance and support throughout this project and the semester. His insightful lectures, thoughtful feedback, and unwavering encouragement played a crucial role in shaping our understanding and refining the work presented here. We are deeply grateful for the knowledge and mentorship he has shared with us.
 
