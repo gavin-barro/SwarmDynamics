@@ -1,5 +1,4 @@
-## Project Title
-Simulating Invasive Hives
+# Swarm Dynamics
 
 # Authors
 Gavin Barro and Austin Earl
