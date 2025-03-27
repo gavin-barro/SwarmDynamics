@@ -95,6 +95,48 @@ We will discuss the results of our simulations below.
 Our results section is broken up into two categories, based on our two simulations: Random Flower Selection, where there is no invasive species and 
 Weighted Flower Selection, where there is an invasive species.
 
+# Random Flower Selection
+The simulation has four types of flowers and one species of bees. There are 3 native flowers and one invasive flower. The native flowers have around the same nectar regeneration, lifespan, and reproduction rate. The invasive flowers have a higher nectar regeneration, lifespan, and the same reproduction. The way reproduction is decided is by the number of times they are visited by a bee. In the random selection, the reproduction for the invasive and native are the same to keep their counts the same. Each flower has an equal chance of being chosen, if the flower is already occupied another flower is chosen at random from the array of existing flowers. When a bee visits an unoccupied flower, it collects nectar and moves to another flower until it reaches its max carry weight. Once that happens, the bee will go back to its hive and deposit the nectar then go back to visiting flowers. Once the hive reaches a certain amount of nectar, it will produce a beer. The number of native flowers starts at 25 for each species and the number of invasive flowers starts at 10.
+
+![Results 1](images/results1.png)
+
+Although the number of invasive flowers starts at a lower amount, they all end up at around the same amount. 
+
+# Weighted Flower Selection
+The weighted selection is very similar to the random, the only differences are the selection and conditions from reproduction. The number of visits for the native flowers increases and the number of visits for the invasive flowers decreases. The chance for a bee to visit an invasive flower is also increased. This is done since the invasive flowers provide more nectar. 
+
+![Results 2](images/results2.png)
+
+The amount of invasive flowers significantly increases when the reproduction rate and selection is weighted in their favor. This causes the amount of  native flowers to decrease significantly, even leading some to die out.
+
+# Sensitivity Analysis
+Reproduction rate per turns
+Ph = 6
+Pl = 2
+Number Of Flowers
+Ch = 175
+Cl = 50
+Standard Sensitivity Equation: [100 * (Ch - CL) / Ch] / [100 * (Ph - Pl) / Ph]
+= (100 (175 - 50) / 175) / (100 * (6 - 2) / 6) = 1.0714
+
+![Sensitivity 1](images/sensitivity1.png)
+
+![Sensitivity 2](images/sensitivity2.png)
+
+These graphs came from the random selection simulation. We did the sensitivity analysis on reproduction, to see what caused the most change. The top graph we increased the reproduction for the invasive very slightly, and the next one we increased it more. This shows how as the reproduction rate increases, the amount of invasive flowers increases and stays at a steady  number.
+
+# Model Validation
+To validate our model, we conducted thorough parameter tuning, focusing particularly on the nectar decrease rate to achieve a balanced ecosystem where hive sustainability, bee population growth, and flower regeneration were all maintained. We simulated two versions of the ecosystem, one with only native flowers and one including an invasive species, to ensure our findings aligned with our initial hypotheses. Additionally, we validated hive nectar consumption by comparing it against nectar regeneration rates, ensuring realistic resource depletion dynamics. Monitoring the bee population over time allowed us to detect anomalies, such as premature extinction or unchecked exponential growth, which could indicate issues in the model. Finally, we employed debugging techniques and manual inspection of interactions to confirm that the system behaved as expected under various conditions. This rigorous validation process ensured the accuracy and reliability of our simulations.
+
+# Model Evaluation
+Our evaluation revealed distinct outcomes depending on the presence of invasive flowers. When invasive flowers were included, their higher nectar regeneration rates caused a rapid increase in hive storage, allowing them to overtake native flowers and leading to unsustainable bee population growth. This competitive exclusion of native flowers disrupted the balance of the ecosystem, resulting in long-term instability. In contrast, simulations without invasive flowers showed nectar levels stabilizing, enabling a sustainable equilibrium between hives and native flowers. The bee population exhibited steady growth and decline patterns in alignment with nectar availability, reflecting a balanced ecosystem dynamic. Emergent results from these simulations underscored the destabilizing potential of invasive species, as they monopolized resources and outcompeted native flora. Parameter tuning also highlighted the importance of nectar decrease rates, where excessively high rates caused premature hive and bee population collapse, and low rates resulted in unchecked growth, further emphasizing the need for careful calibration.
+
+# Conclusion and Future Works
+Our model successfully captured key dynamics of resource competition and population sustainability, demonstrating realistic interactions between ecosystem components under controlled conditions. However, certain limitations affect the model's realism. The lack of environmental factors, such as weather, seasons, and predation, simplified the ecosystem and may not fully represent actual ecological processes. Additionally, fixed lifespans and nectar regeneration rates for flowers might not accurately reflect the variability found in natural ecosystems. These insights highlight both the strengths of the model and opportunities for future refinement to enhance its ecological fidelity.
+
+# Sources and Relevant Links
+https://www.usgs.gov/faqs/how-have-invasive-pythons-impacted-florida-ecosystems  
+https://beecology.wpi.edu/website/home 
 
 
 # Acknowledgements
