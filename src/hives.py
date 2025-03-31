@@ -1,13 +1,13 @@
 from datetime import timedelta
 
 class Hive:
-    '''
+    """
     producing-bees
     season-start
     season-end
     storage-nectar
     has-seed?
-    '''
+    """
 
     # Make a new bee every 10 ticks
     # When bees reach maximum nectar, they visit the hive - reset bees nectar to 0

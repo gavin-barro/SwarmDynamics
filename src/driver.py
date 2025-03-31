@@ -15,7 +15,7 @@ from flowers import Flower
     ecosystem. 
     
     Invasive flower gives more pollen than the other flowers in the ecosystem
-    The bees gravitate towards that flower
+    The bees gravitate towards that flower.
 
     Author: Gavin Barro and Austin Earl
     Version: 10/15/2024

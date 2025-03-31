@@ -5,8 +5,8 @@ from flowers import Flower
 import matplotlib.pyplot as plt 
 
 class Ecosystem:
-    BEE_WAITTIME: int = 8
-    NECTAR_DECREASE_RATE: int = 48
+    BEE_WAITTIME = 8
+    NECTAR_DECREASE_RATE = 48
     
     def __init__(self, bees: list[Bee], flowers: list[Flower], hives: list[Hive]):
         self.bees = bees
